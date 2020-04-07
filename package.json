@@ -1,0 +1,19 @@
+{
+  "name": "sqlserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sql.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon sql"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browserify-fs": "^1.0.0",
+    "express": "^4.17.1",
+    "mssql": "^6.2.0",
+    "mysql": "^2.18.1",
+    "tedious": "^8.2.0"
+  }
+}
