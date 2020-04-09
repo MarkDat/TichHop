@@ -30,7 +30,46 @@ function totalMoneyDepar(severTemp,depar){
     }
     return depar;
 }
+function listVacation(severTemp){
+    var arr =[];
+    for(var i = 0; i < severTemp.length;i++){
+        var obj = {};
+        obj.Employee_ID = severTemp[i].Employee_ID;
+        obj.Name = severTemp[i].First_Name +" "+ severTemp[i].Middle_Initial +" "+ severTemp[i].Last_Name;
+        var gioiTinh;
+        if(severTemp[i].Gender==true) gioiTinh = 'Man';
+        else gioiTinh ='Woman';
+        obj.Gender = gioiTinh;
+        obj.Ethnicity = severTemp[i].Ethnicity;
+        obj.Shareholder_Status = severTemp[i].Shareholder_Status;
+        obj.Employment_Status = severTemp[i].Employment_Status;
+        obj.Vacation_Days = severTemp[i].Vacation_Days
+        arr.push(obj);
+    }
+      return arr;
+}
+function listEmployee(severTemp){
+    var arr =[];
+    for(var i = 0; i < severTemp.length;i++){
+        var obj = {};
+        obj.Employee_ID = severTemp[i].Employee_ID;
+        obj.Name = severTemp[i].First_Name +" "+ severTemp[i].Middle_Initial +" "+ severTemp[i].Last_Name;
+        var gioiTinh;
+        if(severTemp[i].Gender==true) gioiTinh = 'Man';
+        else gioiTinh ='Woman';
+        obj.Gender = gioiTinh;
+        obj.Ethnicity = severTemp[i].Ethnicity;
+        obj.Shareholder_Status = severTemp[i].Shareholder_Status;
+        obj.Employment_Status = severTemp[i].Employment_Status;
+        obj.Hire_Date = severTemp[i].Hire_Date;
+        obj.Pay_Rate_Name = severTemp[i].Pay_Rate_Name;
+        obj.Department= severTemp[i].Department;
+        obj.Pay_Amount=severTemp[i].Pay_Amount;
 
+        arr.push(obj);
+    }
+      return arr;
+}
 module.exports = function process(){
 
     fs.readFile('./sever.json', 'utf8', (err, jsonString) => {
@@ -82,7 +121,24 @@ module.exports = function process(){
                 console.log('Successfully wrote file total money Deparment')
             }
         })
-        
+        var vaca = listVacation(severTemp);
+        //console.log(vaca);
+        fs.writeFile('./totalVacation.json', JSON.stringify(vaca), err => {
+            if (err) {
+                console.log('Error writing file', err)
+            } else {
+                console.log('Successfully wrote file total vacation')
+            }
+        })
+        var listE = listEmployee(severTemp);
+        console.log(listE);
+        fs.writeFile('./listEmployee.json', JSON.stringify(listE), err => {
+            if (err) {
+                console.log('Error writing file', err)
+            } else {
+                console.log('Successfully wrote file total vacation')
+            }
+        })
     });
 }
 

@@ -1,0 +1,47 @@
+[
+    {
+        "Employee_ID": 1,
+        "Name": "Huynh Van Tuan",
+        "Gender": "Man",
+        "Ethnicity": "Kinh",
+        "Shareholder_Status": false,
+        "Employment_Status": "Full Time",
+        "Vacation_Days": 5
+    },
+    {
+        "Employee_ID": 2,
+        "Name": "Nguyen Anh Dao",
+        "Gender": "Woman",
+        "Ethnicity": "Kinh",
+        "Shareholder_Status": false,
+        "Employment_Status": "Full Time",
+        "Vacation_Days": 10
+    },
+    {
+        "Employee_ID": 3,
+        "Name": "Phan Thanh Hoang",
+        "Gender": "Man",
+        "Ethnicity": "Kinh",
+        "Shareholder_Status": true,
+        "Employment_Status": "Part Time",
+        "Vacation_Days": 5
+    },
+    {
+        "Employee_ID": 4,
+        "Name": "Luong Ngoc Dat",
+        "Gender": "Man",
+        "Ethnicity": "Kinh",
+        "Shareholder_Status": false,
+        "Employment_Status": "Part Time",
+        "Vacation_Days": 5
+    },
+    {
+        "Employee_ID": 5,
+        "Name": "Nguyen Phu Quang",
+        "Gender": "Man",
+        "Ethnicity": "Mong",
+        "Shareholder_Status": true,
+        "Employment_Status": "Full Time",
+        "Vacation_Days": 11
+    }
+]

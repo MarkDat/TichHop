@@ -999,7 +999,7 @@ text-decoration: none!important;
 	border-top: 1px solid #ddd
 }
 .module {
-	
+	width: 955px;
 	box-shadow: 0 0 3px rgba(0,0,0,.1);
 	border-color: #e9e9e9;
 	margin-bottom: 20px;
