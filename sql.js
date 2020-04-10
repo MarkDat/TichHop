@@ -95,7 +95,18 @@ app.get("/",(req,res)=>{
           
       var pool2 = await mysql.createConnection(configMysql);
       var mysqlQuery = "SELECT e.idEmployee,e.Last_Name,e.First_Name,e.Vacation_Days,e.Paid_To_Date,e.Paid_Last_Year,p.Pay_Rate_Name,p.Pay_Amount,p.Pay_Type,p.Value FROM employee e,pay_rates p WHERE e.PayRates_id=p.idPay_Rates"
-     
+      
+      var pool3 = await mysql.createConnection(configMysql);
+      var mysqlQuery3 = 'select User_Name,Password from users';
+
+      pool3.query(mysqlQuery3, (err, result2) => {
+        if (err) throw err;
+        console.log('Save user list:');
+        fs.writeFile('user.json', JSON.stringify(result2), (err) => {
+          if (err) throw err;
+        });
+    });
+      
       pool2.query(mysqlQuery,(err,result2)=>{
         if(err) throw err;
         console.log('DB2 result:');
@@ -121,6 +132,8 @@ app.get("/",(req,res)=>{
     } catch (err) {
       if (err) console.log(err);
     }
+
+    
   }) ();
 })
 var server = app.listen(5000, function () {

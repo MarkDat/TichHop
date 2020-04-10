@@ -15,7 +15,6 @@ $(document).ready(function () {
         var check = true;
         var bold;
         a.forEach(function(obj){
-                console.log(obj);
                 i+=1;
                 if(check){
                     bold = "even"; check = false;
